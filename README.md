@@ -87,6 +87,7 @@
 ~~删除线~~
 
 ③列表
+
 \- 项目一
 
 \- 项目二
@@ -96,16 +97,19 @@
 \- 项目三
 
 效果：
+
 - 项目一
 - 项目二
   - 嵌套项目（缩进两个空格）
 - 项目三
 
 ④链接
-\[CCTV5][(http://tv.cctv.com/cctv5/)]
+
+\[CCTV5](http://tv.cctv.com/cctv5/)
 
 效果：
-[CCTV5][(http://tv.cctv.com/cctv5/)]
+
+[CCTV5](http://tv.cctv.com/cctv5/)
 
 
 
