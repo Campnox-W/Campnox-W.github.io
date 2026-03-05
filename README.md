@@ -265,6 +265,9 @@ GTF文件（基因库文件）
 
 #### 1D→4D
 1D：Pfam；HMM（Hidden markov Model）;regular grammar（正则语法，处理单词序列）。eg：根据序列预测外显子、内含子区域；归类基因家族
+
 2D：Rfam；SCFG；context free（上下文无关）；RNA结构预测，语法需要2级    人类基因数：~21000
+
 3D：多维，context sensitive（上下文相关）。自注意机制处理长距离连接（eg.大语言模型生成一个词，需要考虑前文所有词）；position embed处理平行计算。蛋白质预测（alphafold）
+
 HD：eg.精准医疗
