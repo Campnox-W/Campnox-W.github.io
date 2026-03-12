@@ -271,3 +271,58 @@ GTF文件（基因库文件）
 3D：多维，context sensitive（上下文相关）。自注意机制处理长距离连接（eg.大语言模型生成一个词，需要考虑前文所有词）；position embed处理平行计算。蛋白质预测（alphafold）
 
 HD：eg.精准医疗
+
+## 第三节课笔记
+
+### Blast(序列比对技术, basic alignment algorithm)
+
+#### pairwise alignment（一对序列比对）
+选序列，选评分算法，**允许插入删除**，考虑局部or全体对齐，估计对齐概率，统计打分
+
+eg. S=Σ(identities, mismatches)-Σ(gaps)。eg.完美对齐+2，错配-1，gap-1
+
+打分矩阵：核苷酸对称，氨基酸不对称。
+
+gap的处理：W=a+(n-1)b。一般是简单的线性模型
+
+#### 全局比对
+
+Needleman- Wunshc 算法：
+
+迭代式算法，动态
+
+得分为配对、错配、gap乘以各自系数并相加。
+
+得分矩阵：完全对齐先填1，其余留空；然后从右下往左上，每一格加上“右下一行和一列之内的最大分数”；追溯分数增加的路径，形成配对方式（可能不止一种）
+
+#### 局部比对
+
+Smith-Waterman 算法：寻找接近的子序列
+
+遍历所有可能的起终点
+
+
+#### 应用：Blast（basic local alignment search tool）
+输入一个query sequence，向数据库的所有序列内匹配。传统算法效率不够。需要heuristic methods（近似方法、经验算法）→→如果“相似的区段”够多且顺序对应，就算是相似
+
+步骤：
+
+预存一个哈希表，列出可能对应的局部序列。tuple的大小一般是4-8。比对间隔部分得到最优值。
+
+可以容忍相似氨基酸，也算匹配。预存的相似核苷酸区段长度w=11；氨基酸区段w=3
+
+P value：某种程度的“高度匹配”偶然发生的概率（小概率事件不会发生，因此那两个序列必定有关联）
+
+E value：多次测试后修正的p value
+
+氨基酸序列20%相似，结构就足够相似了
+
+同源性分为直系同源（ortho不同物种的同一蛋白）和旁系同源（para同一物种同一蛋白的两个分支）。
+
+其他算法：HMM、SCFG
+
+### projects
+ENCODE、UK biobank、 TCGA
+
+### 数据库
+NCBI、EMBL、SEISSPROT、uniprot等
