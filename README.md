@@ -327,4 +327,40 @@ ENCODE、UK biobank、 TCGA
 ### 数据库
 NCBI、EMBL、SEISSPROT、uniprot等
 
-## 第四节课笔记
+## 第五节课笔记
+### R语言 ###
+
+- 为统计分析而设计的语言（两名发明者名字首字母R）
+- 可以科学作图
+- 可以跨平台
+
+R Packages
+
+- 数据处理：dplyr，tidyr
+- 文件读取：readr
+- 字符串处理：stringr
+- 网页功能：rvest，xml2，XML
+- 绘图：ggplot2，rgl，plotly，threejs
+
+  下载包:install.packages()
+  
+  载入包：Library()
+
+  删除包：Detach("Package: ")
+
+  帮助文件：Help(package=" ")
+
+  Class：数据类型；Type：数据排列方式（矩阵、列表，……）
+
+### NGS ###
+
+新一代测序技术。
+
+Paired-end Sequencing
+
+建库加接头，扩增用接头对应的引物
+
+三代测序：纳米孔等，方便但错误率偏高
+
+#### NGS类型 ####
+
